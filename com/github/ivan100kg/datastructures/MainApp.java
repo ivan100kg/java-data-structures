@@ -26,12 +26,12 @@ public class MainApp {
 
 
         // Vector
-        Vector<Integer> vList = new Vector<>(aList);
+        List<Integer> vList = new Vector<>(aList);
         testGet(vList);
 
 
         // Stack
-        Stack<Integer> sList = new Stack<>();
+        List<Integer> sList = new Stack<>();
         sList.addAll(aList);
         testGet(sList);
     }
