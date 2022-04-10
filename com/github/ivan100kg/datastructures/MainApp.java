@@ -19,16 +19,21 @@ public class MainApp {
         for (int i : pArray) aList.add(i);
         testGet(aList);
 
+
         // LinkedList
         List<Integer> lList = new LinkedList<>(aList);
         testGet(lList);
 
 
         // Vector
-        List<Integer> vList = new Vector<>(aList);
+        Vector<Integer> vList = new Vector<>(aList);
         testGet(vList);
 
 
+        // Stack
+        Stack<Integer> sList = new Stack<>();
+        sList.addAll(aList);
+        testGet(sList);
     }
 
     static void testGet(List<Integer> list) {
