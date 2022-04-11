@@ -11,29 +11,32 @@ public class MainApp {
         for (int i = 0; i < SIZE; i++) {
             pArray[i] = (int) (Math.random() * SIZE);
         }
-        long start = System.currentTimeMillis();
 
 
         // ArrayList
         List<Integer> aList = new ArrayList<>();
         for (int i : pArray) aList.add(i);
         testGet(aList);
+        testAddToMiddle(aList);
 
 
         // LinkedList
         List<Integer> lList = new LinkedList<>(aList);
         testGet(lList);
+        testAddToMiddle(lList);
 
 
         // Vector
         List<Integer> vList = new Vector<>(aList);
         testGet(vList);
+        testAddToMiddle(vList);
 
 
         // Stack
         List<Integer> sList = new Stack<>();
         sList.addAll(aList);
         testGet(sList);
+        testAddToMiddle(sList);
 
 
         // HashMap
@@ -42,6 +45,7 @@ public class MainApp {
             hMap.put(i.toString(), i);
         }
         testGet(hMap);
+        testAddToMiddle(hMap);
     }
 
     static void testGet(List<Integer> list) {
@@ -58,5 +62,21 @@ public class MainApp {
         String key = String.valueOf(size + (int) ((Math.random() * (100 - 1)) + 1));
         Integer result = map.get(key);
         System.out.println(map.getClass().getSimpleName() + " test get(" + key + ") = " + result + " time: " + (System.currentTimeMillis() - start));
+    }
+
+    static void testAddToMiddle(List<Integer> list) {
+        int size = list.size()/2;
+        long start = System.currentTimeMillis();
+        int index = size + (int) ((Math.random() * (100 - 1)) + 1);
+        list.add(index, index);
+        System.out.println(list.getClass().getSimpleName() + " test add(" + index + "," + index + ") = time: " + (System.currentTimeMillis() - start));
+    }
+
+    static void testAddToMiddle(Map<String, Integer> map) {
+        int size = map.size()/2;
+        long start = System.currentTimeMillis();
+        String key = String.valueOf(size + (int) ((Math.random() * (100 - 1)) + 1));
+        map.put(key, Integer.valueOf(key));
+        System.out.println(map.getClass().getSimpleName() + " test put(" + key + ") = time: " + (System.currentTimeMillis() - start));
     }
 }
