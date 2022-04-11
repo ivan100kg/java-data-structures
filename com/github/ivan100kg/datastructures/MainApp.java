@@ -46,6 +46,15 @@ public class MainApp {
         }
         testGet(hMap);
         testAddToMiddle(hMap);
+
+
+        // TreeMap
+        Map<String, Integer> tMap = new TreeMap<>();
+        for (Integer i : aList) {
+            tMap.put(i.toString(), i);
+        }
+        testGet(tMap);
+        testAddToMiddle(tMap);
     }
 
     static void testGet(List<Integer> list) {
