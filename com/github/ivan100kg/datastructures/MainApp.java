@@ -55,6 +55,15 @@ public class MainApp {
         }
         testGet(tMap);
         testAddToMiddle(tMap);
+
+
+        // LinkedHashMap
+        Map<String, Integer> lhMap = new TreeMap<>();
+        for (Integer i : aList) {
+            lhMap.put(i.toString(), i);
+        }
+        testGet(lhMap);
+        testAddToMiddle(lhMap);
     }
 
     static void testGet(List<Integer> list) {
