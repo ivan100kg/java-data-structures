@@ -58,7 +58,7 @@ public class MainApp {
 
 
         // LinkedHashMap
-        Map<String, Integer> lhMap = new TreeMap<>();
+        Map<String, Integer> lhMap = new LinkedHashMap<>();
         for (Integer i : aList) {
             lhMap.put(i.toString(), i);
         }
