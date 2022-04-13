@@ -64,6 +64,15 @@ public class MainApp {
         }
         testGet(lhMap);
         testAddToMiddle(lhMap);
+
+
+        // HashTable
+        Map<String, Integer> htMap = new Hashtable<>();
+        for (Integer i : aList) {
+            htMap.put(i.toString(), i);
+        }
+        testGet(htMap);
+        testAddToMiddle(htMap);
     }
 
     static void testGet(List<Integer> list) {
