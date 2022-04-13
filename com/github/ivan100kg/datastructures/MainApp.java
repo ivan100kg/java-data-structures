@@ -73,18 +73,32 @@ public class MainApp {
         }
         testGet(htMap);
         testAddToMiddle(htMap);
+
+
+        // HashSet
+        Set<Integer> hSet = new HashSet<>(aList);
+        testGet(hSet);
+        testAddToMiddle(hSet);
     }
 
     static void testGet(List<Integer> list) {
-        int size = list.size()/2;
+        int size = list.size() / 2;
         long start = System.currentTimeMillis();
         int index = size + (int) ((Math.random() * (100 - 1)) + 1);
         int result = list.get(index);
         System.out.println(list.getClass().getSimpleName() + " test get(" + index + ") = " + result + " time: " + (System.currentTimeMillis() - start));
     }
 
+    static void testGet(Set<Integer> set) {
+        int size = set.size() / 2;
+        long start = System.currentTimeMillis();
+        int key = size + (int) ((Math.random() * (100 - 1)) + 1);
+        boolean result = set.contains(key);
+        System.out.println(set.getClass().getSimpleName() + " test get(" + key + ") = " + result + " time: " + (System.currentTimeMillis() - start));
+    }
+
     static void testGet(Map<String, Integer> map) {
-        int size = map.size()/2;
+        int size = map.size() / 2;
         long start = System.currentTimeMillis();
         String key = String.valueOf(size + (int) ((Math.random() * (100 - 1)) + 1));
         Integer result = map.get(key);
@@ -92,7 +106,7 @@ public class MainApp {
     }
 
     static void testAddToMiddle(List<Integer> list) {
-        int size = list.size()/2;
+        int size = list.size() / 2;
         long start = System.currentTimeMillis();
         int index = size + (int) ((Math.random() * (100 - 1)) + 1);
         list.add(index, index);
@@ -100,10 +114,18 @@ public class MainApp {
     }
 
     static void testAddToMiddle(Map<String, Integer> map) {
-        int size = map.size()/2;
+        int size = map.size() / 2;
         long start = System.currentTimeMillis();
         String key = String.valueOf(size + (int) ((Math.random() * (100 - 1)) + 1));
         map.put(key, Integer.valueOf(key));
         System.out.println(map.getClass().getSimpleName() + " test put(" + key + ") = time: " + (System.currentTimeMillis() - start));
+    }
+
+    static void testAddToMiddle(Set<Integer> set) {
+        int size = set.size() / 2;
+        long start = System.currentTimeMillis();
+        int key = size + (int) ((Math.random() * (100 - 1)) + 1);
+        set.add(key);
+        System.out.println(set.getClass().getSimpleName() + " test add(" + key + ") = time: " + (System.currentTimeMillis() - start));
     }
 }
