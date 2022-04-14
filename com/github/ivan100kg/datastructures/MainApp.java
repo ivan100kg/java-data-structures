@@ -79,6 +79,12 @@ public class MainApp {
         Set<Integer> hSet = new HashSet<>(aList);
         testGet(hSet);
         testAddToMiddle(hSet);
+
+
+        // TreeSet
+        Set<Integer> tSet = new TreeSet<>(aList);
+        testGet(tSet);
+        testAddToMiddle(tSet);
     }
 
     static void testGet(List<Integer> list) {
