@@ -85,6 +85,12 @@ public class MainApp {
         Set<Integer> tSet = new TreeSet<>(aList);
         testGet(tSet);
         testAddToMiddle(tSet);
+
+
+        // LinkedHashSet
+        Set<Integer> lhSet = new LinkedHashSet<>(aList);
+        testGet(lhSet);
+        testAddToMiddle(lhSet);
     }
 
     static void testGet(List<Integer> list) {
